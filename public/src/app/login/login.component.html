@@ -1,0 +1,12 @@
+<form (submit)="onSubmit()" id="form1" #myForm='ngForm'>
+    <div class="form-group">
+      <label>Your Name:</label>
+      <input 
+      class="form-control" 
+      type="text" 
+      name="name" 
+      required
+      [(ngModel)]="user">
+      <button type="submit" value="submit">Login</button>
+    </div>
+</form>

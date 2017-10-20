@@ -1,0 +1,50 @@
+<h3><a [routerLink]="['/polls']">Cancel</a></h3>
+
+<form #myForm='ngForm' (submit)="onSubmit()">
+    <label for="question">Question: </label>
+    <input 
+    type="text" 
+    name="question" 
+    [(ngModel)]="poll.question" 
+    required 
+    minlength="8" 
+    #question="ngModel">
+    <div *ngIf="!question.valid && !question.pristine">Question not valid!  Cannot be blank and must be at least 8 characters long!</div>
+    <label for="option1">Option 1: </label>
+    <input 
+    type="text" 
+    name="option1" 
+    [(ngModel)]="poll.q1" 
+    required 
+    minlength="3" 
+    #option1="ngModel">
+    <div *ngIf="!option1.valid && !option1.pristine">Option 1 not valid!  Cannot be blank and must be at least 3 characters long!</div>
+    <label for="option2">Option 2: </label>
+    <input 
+    type="text" 
+    name="option2" 
+    [(ngModel)]="poll.q2" 
+    required 
+    minlength="3" 
+    #option2="ngModel">
+    <div *ngIf="!option2.valid && !option2.pristine">Option 2 not valid!  Cannot be blank and must be at least 3 characters long!</div>
+    <label for="option3">Option 3: </label>
+    <input 
+    type="text" 
+    name="option3" 
+    [(ngModel)]="poll.q3" 
+    required 
+    minlength="3" 
+    #option3="ngModel">
+    <div *ngIf="!option3.valid && !option3.pristine">Option 3 not valid!  Cannot be blank and must be at least 3 characters long!</div>
+    <label for="option4">Option 4: </label>
+    <input 
+    type="text" 
+    name="option4" 
+    [(ngModel)]="poll.q4" 
+    required 
+    minlength="3" 
+    #option4="ngModel">
+    <div *ngIf="!option4.valid && !option4.pristine">Option 4 not valid!  Cannot be blank and must be at least 3 characters long!</div>
+    <button type="submit" value="submit" [hidden]="!myForm.valid">Create Poll</button><br>
+  </form>
